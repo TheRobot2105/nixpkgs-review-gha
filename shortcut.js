@@ -47,5 +47,7 @@ const setup = async () => {
   }
 }
 
-window.addEventListener('popstate', setup);
+window.addEventListener('pjax:end', setup);
+const observer = new MutationObserver(setup);
+observer.observe(document.body, { childList: true, subtree: true });
 setup();
