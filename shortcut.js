@@ -1,4 +1,10 @@
-const repo = "Defelo/nixpkgs-review-gha";
+// ==UserScript==
+// @name     nixpkgs-review-gha
+// @version  1
+// @grant none
+// @require https://code.jquery.com/jquery-3.7.1.min.js
+// ==/UserScript==
+const repo = "TheRobot2105/nixpkgs-review-gha";
 
 const sleep = duration => new Promise(resolve => setTimeout(resolve, duration));
 const query = async (doc, sel) => {
@@ -10,7 +16,7 @@ const query = async (doc, sel) => {
 };
 
 const setup = async () => {
-  const match = /^https:\/\/github.com\/nixos\/nixpkgs\/pull\/(\d+)/i.exec(location.href);
+  const match = /^https:\/\/github.com\/NixOS\/nixpkgs\/pull\/(\d+)/i.exec(location.href);
   if (match === null) return;
   
   const pr = match[1];
@@ -41,5 +47,5 @@ const setup = async () => {
   }
 }
 
-navigation.addEventListener('navigate', setup);
+window.addEventListener('popstate', setup);
 setup();
