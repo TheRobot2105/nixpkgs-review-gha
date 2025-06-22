@@ -3,7 +3,7 @@
 // @match       https://github.com/*
 // ==/UserScript==
 
-const repo = "Defelo/nixpkgs-review-gha";
+const repo = "TheRobot2105/nixpkgs-review-gha";
 
 const prTrackers = [
   { name: "nixpk.gs", toUrl: pr => `https://nixpk.gs/pr-tracker.html?pr=${pr}` },
