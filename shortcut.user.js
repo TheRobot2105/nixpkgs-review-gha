@@ -4,7 +4,7 @@
 // @run-at      document-idle
 // ==/UserScript==
 
-const repo = "Defelo/nixpkgs-review-gha";
+const repo = "TheRobot2105/nixpkgs-review-gha";
 
 const reviewDefaults = ({ title, commits, labels, author, authoredByMe, hasLinuxRebuilds, hasDarwinRebuilds }) => {
   const darwinSandbox = "relaxed";
